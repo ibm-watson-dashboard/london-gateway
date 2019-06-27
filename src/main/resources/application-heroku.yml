@@ -1,23 +1,13 @@
-spring:
-  application:
-    name: london-gateway
-    
-server:
-  port: ${PORT:8080}
-  
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: ${EUREKA_DISCOVERY_URL:http://localhost:8761/eureka/}
-      
 zuul:
   ignoredServices: '*'
   routes:
     inspector-lestrade:
       path: /auth/**
       serviceId: inspector-lestrade
+      url: ${INSPECTOR_LESTRADE_URL}
       stripPrefix: false
       sensitiveHeaders: Cookie,Set-Cookie
     john-watson:
       path: /john-watson/**
       serviceId: john-watson
+      url: ${JOHN_WATSON_URL}
