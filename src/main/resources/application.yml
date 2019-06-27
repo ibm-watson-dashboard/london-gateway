@@ -16,8 +16,10 @@ zuul:
     inspector-lestrade:
       path: /auth/**
       serviceId: inspector-lestrade
+      url: https://inspector-lestrade.herokuapp.com/
       stripPrefix: false
       sensitiveHeaders: Cookie,Set-Cookie
     john-watson:
       path: /john-watson/**
       serviceId: john-watson
+      url: https://john-watson.herokuapp.com/
