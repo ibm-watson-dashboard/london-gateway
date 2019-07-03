@@ -2,7 +2,7 @@ zuul:
   ignoredServices: '*'
   routes:
     inspector-lestrade:
-      path: /auth/**
+      path: /oauth2/**
       serviceId: inspector-lestrade
       url: ${INSPECTOR_LESTRADE_URL}
       stripPrefix: false
