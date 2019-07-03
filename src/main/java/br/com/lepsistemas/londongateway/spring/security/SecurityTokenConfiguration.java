@@ -27,7 +27,8 @@ public class SecurityTokenConfiguration extends WebSecurityConfigurerAdapter {
 			.and()
 				.addFilterAfter(new JwtTokenAuthenticationFilter(jwtConfig), UsernamePasswordAuthenticationFilter.class)
 			.authorizeRequests()
-				.antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
+//				.antMatchers(HttpMethod.POST, jwtConfig.getAuth()).permitAll()
+				.antMatchers(HttpMethod.GET, jwtConfig.getOauth2()).permitAll()
 				.antMatchers("/john-watson/**").hasRole("USER")
 				.anyRequest().authenticated();
 	}
