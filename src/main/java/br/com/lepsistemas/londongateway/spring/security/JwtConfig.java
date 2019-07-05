@@ -19,7 +19,7 @@ public class JwtConfig {
 	@Value("${security.jwt.expiration:#{24*60*60}}")
 	private long expiration;
 	
-	@Value("${security.jwt.secret:JwtSecretKey}")
+	@Value("${security.jwt.secret:926D96C90030DD58429D2751AC1BDBBC}")
 	private String secret;
 
 	public String getAuth() {
